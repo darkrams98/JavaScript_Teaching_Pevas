@@ -1,0 +1,27 @@
+{
+  "name": "async_example",
+  "version": "1.0.0",
+  "description": "example for show difference between async and sync functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darkrams98/JavaScript_Teacing_Pevas.git"
+  },
+  "keywords": [
+    "understand_sync_&_Async_concept",
+    "learn_callback_functions",
+    "educational"
+  ],
+  "author": "Alireza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darkrams98/JavaScript_Teacing_Pevas/issues"
+  },
+  "homepage": "https://github.com/darkrams98/JavaScript_Teacing_Pevas#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

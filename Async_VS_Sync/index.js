@@ -16,14 +16,15 @@ app.get('/', function (req, res) {
 
 const fs = require('fs');
 
-const data = fs.readFileSync('data.json');
-const objects = JSON.parse(data);
-// This will parse the JSON file into a JavaScript object that you can then access.
+
 
 // Define a GET route to return all objects
-app.get('/showdata', function(req, res) {
-    res.json(objects); 
-  });
+app.get('/showdata', function (req, res) {
+    // This will parse the JSON file into a JavaScript object that you can then access.
+    const data = fs.readFileSync('data.json');
+    const objects = JSON.parse(data);
+    res.json(objects);
+});
 
 // Start server
 const port = 3000;
