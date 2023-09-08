@@ -21,7 +21,7 @@ const fs = require('fs');
 // Define a GET route to return all objects
 app.get('/showdata', function (req, res) {
     // This will parse the JSON file into a JavaScript object that you can then access.
-    const data = fs.readFileSync('data.json');
+    const data = fs.readFileSync('Example_Data.json');
     const objects = JSON.parse(data);
     res.json(objects);
 });
@@ -37,12 +37,7 @@ app.use(function (err, req, res, next) {
     res.status(500).send('Internal Server Error');
 });
 
-// Handle routes
-app.get('/', function (req, res) {
-    res.send('Hello World');
-});
-// Serve static files 
-app.use(express.static('public'));
+
 // Handle 404 errors
 app.use(function (req, res) {
     res.status(404).send('Not Found');
