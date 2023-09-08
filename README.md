@@ -1,1 +1,1 @@
-# JavaScript_Teacing_Pevas
+# JavaScript_Teaching_Pevas
