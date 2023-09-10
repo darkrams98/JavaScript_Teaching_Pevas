@@ -1,7 +1,6 @@
-const express = require('express');
-
+const express = require('express'); 
 const app = express();
-
+const path = require('path');
 const fs = require('fs');
 
 // Parse request body
@@ -13,6 +12,9 @@ app.use(express.static('public'));
 
 // app use modules for serving js file.
 app.use('/modules', express.static('modules'));
+
+// Serve static files from the 'style' directory
+app.use('/styles', express.static(path.join(__dirname, 'styles')));
 
 
 // Handle routes
