@@ -11,7 +11,8 @@ app.use(express.static('public'));
 
 // Handle routes
 app.get('/', function (req, res) {
-    res.send('Hello World');
+    res.sendFile(__dirname + '/pages/main.html');
+
 });
 
 const fs = require('fs');
