@@ -20,19 +20,22 @@
 
 
 </body>
-<script type="module" src="slide_show.js"></script>
-<script>
-    // fetch post data
-    fetch('/showdata')
+<script type="module">
+    import renderSlides from './slide_show.js';
+
+        // fetch post data
+        fetch('/showdata')
         .then(res => res.json())
         .then(data => {
-            renderSlides(data);
+            postShow(data);
+            console.log(data)
         })
 
-    function renderSlides(posts) {
+    function postShow(posts) {
         slideShow.renderSlides(posts);
     }
 </script>
+
 <style>
     body {
         width: 100%;

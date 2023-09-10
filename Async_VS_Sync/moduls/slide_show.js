@@ -1,12 +1,13 @@
 
-module.exports = {
+// In slide_show.js
+export default function renderSlides(slides) {
+    // render slide code
 
-    //      get parant Node :
-    parent_container: document.getElementsByClassName("card_container")[0],
-
-    //      create object to define controlle functions : 
-    postController: {
+        //      create object to define controlle functions : 
+        postController = {
         renderPost: function (data) {
+            //      get parant Node :
+            parent_container = document.getElementsByClassName("card_container")[0]
             //      create HTML element
             var postCard = document.createElement("div")
             //      add class name 
