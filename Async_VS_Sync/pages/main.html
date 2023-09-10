@@ -19,22 +19,24 @@
         </div>
 
 
+        <!-- Import the postController from slide_show.js -->
+        <script type="module">
+            import { postController } from '/modules/slide_show.js';
+
+            // Fetch post data
+            fetch('/showdata')
+                .then(res => res.json())
+                .then(data => {
+                    postShow(data);
+                    console.log(data)
+                })
+
+            function postShow(posts) {
+                postController.renderPost(posts);
+            }
+        </script>
 </body>
-<script type="module">
-    import renderSlides from './slide_show.js';
 
-        // fetch post data
-        fetch('/showdata')
-        .then(res => res.json())
-        .then(data => {
-            postShow(data);
-            console.log(data)
-        })
-
-    function postShow(posts) {
-        slideShow.renderSlides(posts);
-    }
-</script>
 
 <style>
     body {

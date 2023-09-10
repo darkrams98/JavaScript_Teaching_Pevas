@@ -2,6 +2,8 @@ const express = require('express');
 
 const app = express();
 
+const fs = require('fs');
+
 // Parse request body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -9,13 +11,15 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files
 app.use(express.static('public'));
 
+// app use modules for serving js file.
+app.use('/modules', express.static('modules'));
+
+
 // Handle routes
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/pages/main.html');
-
 });
 
-const fs = require('fs');
 
 
 
