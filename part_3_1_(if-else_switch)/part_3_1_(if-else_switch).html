@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+    <!-- style -->
+    <link rel="stylesheet" href="register-style.css">
+
+</head>
+
+<body>
+    <div class="register-section">
+        <div id="part1">
+            <p>عضویت</p>
+        </div>
+        <div id="register">
+            <p>
+                نام کاربری
+            </p>
+            <input id="username" type="text">
+        </div>
+        <div id="register">
+            <p>
+                ایمیل
+            </p>
+            <input type="email" name="" id="email-input">
+        </div>
+        <div id="register">
+            <p>
+                رمز عبور
+            </p>
+            <input type="text" id="password">
+            <div id="password-errors">
+                <p id="password-error-1">!لطفا رمز عبور خود را انتخاب کنید</p>
+                <p id="password-error-2">!رمز عبور باید حرف بزرگ داشته باشد</p>
+                <p id="password-error-3">!رمز عبور باید عدد داشته باشد</p>
+                <p id="password-error-4">!رمزعبور باید بیش از ۸ حرف باشد</p>
+            </div>
+        </div>
+        <div id="register">
+            <p>
+                تکرار رمز عبور
+            </p>
+            <input type="text" id="repassword">
+        </div>
+        <div id="agreement">
+            <p>با شرایط سایت موافق هستم</p>
+            <input type="checkbox" id="chech-agreement">
+        </div>
+        <div id="register-btn">
+            <button onclick="register()">عضویت</button>
+        </div>
+    </div>
+</body>
+<script src="part_3_1_(if-else_switch).js"></script>
+
+</html>
