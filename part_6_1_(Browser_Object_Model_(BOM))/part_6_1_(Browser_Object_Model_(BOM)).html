@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<div style="display: flex ;width: 200px; height: 100px ; background-color: black; color: white; font-size: 16px ; margin: auto; align-items: center; cursor: pointer;"
+    onclick="openNewDoc()">
+    <p style="margin: auto; ">open new Document</p>
+</div>
+<div onclick="openAlert()" class="popup_boxes_btn"><p>Alert !</p></div>
+<div onclick="openConfirm()" class="popup_boxes_btn"><p>Confirm me !</p></div>
+<div onclick="openPrompt()" class="popup_boxes_btn"><p>Prompt</p></div>
+
+
+<script src="part_6_1_(Browser_Object_Model_(BOM)).js"></script>
+
+</html>
+<style>
+    .popup_boxes_btn {
+        display: flex;
+        width: 150px ;
+        height: 50px;
+        margin: auto;
+        align-items: center;
+        cursor: pointer;
+        background-color: rgb(210, 210, 210);
+        margin-top: 15px ;
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.70);
+    }
+    .popup_boxes_btn p {
+        margin: auto;
+    }
+
+</style>

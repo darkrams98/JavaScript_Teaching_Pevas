@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="part_5_3_(DOM_(forms_&_input)).css">
+</head>
+
+<body>
+    <div class="form-container">
+        <p id="title">input section</p>
+
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+        <!-- get value with document.form  -->
+
+        <form name="form-1" onsubmit="getData()">
+
+            <div class="form-section">
+                <p class="section-title">Get value with <span class="redColor">document.form</span></p>
+
+                <input name="input-1" type="text">
+                <div class="value-div">
+                    <p class="send-by-js">value send by js :</p>
+                    <p class="value-p1"></p>
+                    <input type="submit">
+                </div>
+            </div>
+
+        </form>
+
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+        <!-- get value with oninput event -->
+
+        <div class="form-section">
+
+            <p class="section-title">Get value with <span class="redColor">oninput</span> event : </p>
+
+            <input oninput="getValue(this)" type="text">
+
+            <div class="value-div">
+                <p class="send-by-js">value send by js :</p>
+                <p class="value-p1"></p>
+
+            </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+        <!-- get value with on chenge event -->
+
+        <div class="form-section">
+            <p class="section-title">Get value with <span class="redColor">onchenge</span> event</p>
+
+            <input onchange="getValue(this)" type="text">
+
+            <div class="value-div">
+                <p class="send-by-js">value send by js :</p>
+                <p class="value-p1"></p>
+
+            </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+        <div class="form-section">
+            <p class="section-title">Get value with <span class="redColor">onchenge</span> event</p>
+            
+            <input onchange="getDate(this)" class="date-input" type="date">
+
+            <div class="value-div">
+                <p class="send-by-js">value send by js : </p>
+                <p class="value-p2"></p>
+
+            </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+        <div class="form-section">
+            <p class="section-title">Get radio value with js <span class="redColor">yes / no</span></p>
+
+            <div class="radio-container">
+                <input class="radio-input" type="radio" value="male" name="user-gender">
+                <p class="radio-label">male</p>
+                <input class="radio-input" type="radio" value="female" name="user-gender">
+                <p class="radio-label">female</p>
+            </div>
+
+
+            <div class="value-div">
+                <p class="send-by-js">value send by js :</p>
+                <p class="value-p1"></p>
+            </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+        <div class="form-section">
+            <p class="section-title">Get checkbox value with js <span class="redColor">multi value</span></p>
+
+            <div class="checkbox-container">
+                <input class="checkbox-input" type="checkbox" value="Javascript" name="programing">
+                <p class="checkbox-label">Javascript</p>
+                <input class="checkbox-input" type="checkbox" value="Python" name="programing">
+                <p class="checkbox-label">Python</p>
+                <input class="checkbox-input" type="checkbox" value="Dart" name="programing">
+                <p class="checkbox-label">Dart</p>
+                <input class="checkbox-input" type="checkbox" value="C#" name="programing">
+                <p class="checkbox-label">C#</p>
+                <input class="checkbox-input" type="checkbox" value="C++" name="programing">
+                <p class="checkbox-label">C++</p>
+                <input class="checkbox-input" type="checkbox" value="Java" name="programing">
+                <p class="checkbox-label">Java</p>
+            </div>
+
+
+            <div class="value-div">
+                <p class="send-by-js">value send by js :</p>
+                <p class="value-p1"></p>
+            </div>
+        </div>
+
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+        <!-- -------------------------------------------------------------------------------------------------------------- -->
+
+
+    </div>
+</body>
+<script src="part_5_3_(DOM_(forms_&_input)).js"></script>
+
+</html>

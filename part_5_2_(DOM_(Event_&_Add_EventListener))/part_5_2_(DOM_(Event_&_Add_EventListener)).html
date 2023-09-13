@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="part_5_2_(DOM_(Event_&_Add_EventListener)).css">
+</head>
+
+<body onload="getMyData()" onunload="onunloadFunc()">
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="container">
+        <p id="title">Event Test</p>
+        <div class="class-section">
+
+            <div onclick="this.innerHTML = '<p>clicked</p>'" class="btn-exam">
+                <p>onclick</p>
+            </div>
+
+            <div onclick="clickFunction()" class="btn-exam">
+                <p>onclick js</p>
+            </div>
+
+
+            <div onmouseout="mouseOutFunc(this)" onmouseover="mouseOverFunc(this)" class="btn-exam">
+                <p>onmouseover</p>
+                <p>onmouseout</p>
+            </div>
+            <div onmouseleave="mouseOutFunc(this)" onmouseenter="mouseOverFunc(this)" class="btn-exam">
+                <p>onmouseleave</p>
+                <p>onmouseenter</p>
+            </div>
+
+            <div onmousemove="mouseMoveFunc(this)" class="btn-exam">
+                <p>onmousemove</p>
+            </div>
+
+            <div onmouseup="mouseUpFunc(this)" onmousedown="mouseDownFunc(this)" class="btn-exam">
+                <p>onmousedown</p>
+                <p>onmouseup</p>
+            </div>
+
+            <div class="btn-exam">
+                <p>onload</p>
+            </div>
+
+            <div onclick="clickFunction()" class="btn-exam">
+                <p>onclick js</p>
+            </div>
+            <div class="btn-exam">
+                <p>my event add by js</p>
+            </div>
+
+            <div class="btn-exam">
+                <p style="font-size: 12px ;text-align: center ;">my event add by addEventListener</p>
+            </div>
+
+            <div class="myForm">
+                <p>اسم خود را وارد کنید</p>
+                <input  type="text">
+                <p class="errName">لطفا نام خود را وارد نمایید</p>
+                <p class="errName">نام نمیتواند عدد داشته باشد</p>
+                <p class="errName">نام نمی‌تواند فارسی باشد</p>
+                <p class="errName">نام نمی‌تواند علامت های خاص داشته باشد</p>
+                <p class="errName">این نام قبلا انتخاب شده است</p>
+                <p class="errName">نام نمیتواند کمتر از ۳ حرف باشد</p>
+            </div>
+
+            <div class="btn-exam" style="width: 50%; height: 80px ; display: flex;">
+                <div class="inner_section">inner_section</div>
+            </div>
+
+            <div class="btn-exam" style="width: 50%; height: 80px ; display: flex;">
+                <div class="inner_section">inner_section</div>
+            </div>
+
+            <div class="btn-exam" >
+                <p style="font-size: 14px ;" >my event occur once</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+
+</body>
+<script src="part_5_2_(DOM_(Event_&_Add_EventListener)).js"></script>
+
+</html>

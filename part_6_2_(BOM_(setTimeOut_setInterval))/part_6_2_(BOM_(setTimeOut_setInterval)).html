@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timing Events</title>
+</head>
+
+<body>
+
+    <!-- ██████████████████████████████████████████████████████████████████████████████████████████████████████████████ -->
+
+    <div onclick="setTimeout(Alert_1, 3000)" class="popup_boxes_btn">
+        <p>I'll Alert after 3 second</p>
+    </div>
+
+    <!-- ██████████████████████████████████████████████████████████████████████████████████████████████████████████████ -->
+
+    <div onclick="creatTimeOutVar_1()" class="popup_boxes_btn">
+        <p>I'll Alert after 3 second by javascript</p>
+    </div>
+
+    <!-- ██████████████████████████████████████████████████████████████████████████████████████████████████████████████ -->
+
+    <div onclick="creatTimeOutVar_2()" class="popup_boxes_btn">
+        <p>I'll Alert after 3 second by arrow function</p>
+    </div>
+
+    <!-- ██████████████████████████████████████████████████████████████████████████████████████████████████████████████ -->
+
+    <div style="display: flex; flex-direction: row; width: 280px ; margin: auto; margin-top: 15px ;">
+        <div id="unexecutable" onclick="creatTimeOutVar_3()" class="popup_boxes_btn">
+            <p>Execute after 3 sec</p>
+        </div>
+        <div id="unexecutable" onclick="rmTimeOut_1()" class="popup_boxes_btn">
+            <p>make unexecutable</p>
+        </div>
+    </div>
+    <!-- ██████████████████████████████████████████████████████████████████████████████████████████████████████████████ -->
+
+    <div style="display: flex; flex-direction: row; width: 280px ; margin: auto; margin-top: 15px ;">
+        <div style="background-color: aqua;" id="unexecutable" onclick="mySetTime_4" class="popup_boxes_btn">
+            <p>Execute after 3 sec</p>
+        </div>
+        <div style="background-color: aqua;" id="unexecutable" onclick="rmTimeOut_2" class="popup_boxes_btn">
+            <p>make unexecutable</p>
+        </div>
+    </div>
+
+    <!-- ██████████████████████████████████████████████████████████████████████████████████████████████████████████████ -->
+
+    <div class="popup_boxes_btn" style="flex-direction: row;">
+        <div class="ticker_holder">
+            <div class="prop_holder">
+                <p style="color:red ; ">sell</p>
+            </div>
+            <div id="sell_price"></div>
+        </div>
+        <div class="ticker_holder">
+            <div class="prop_holder">
+                <p style="color:blue">buy</p>
+            </div>
+            <div id="buy_price"></div>
+        </div>
+    </div>
+
+    <!-- ██████████████████████████████████████████████████████████████████████████████████████████████████████████████ -->
+
+</body>
+<script src="part_6_2_(BOM_(setTimeOut_setInterval)).js"></script>
+
+</html>
+
+
+<!-- ██████████████████████████████████████████████████████████████████████████████████████████████████████████████ -->
+<!-- ██████████████████████████████████████████████████████████████████████████████████████████████████████████████ -->
+<!-- ██████████████████████████████████████████████████████████████████████████████████████████████████████████████ -->
+<!-- ██████████████████████████████████████████████████████████████████████████████████████████████████████████████ -->
+<!-- ██████████████████████████████████████████████████████████████████████████████████████████████████████████████ -->
+<!-- ██████████████████████████████████████████████████████████████████████████████████████████████████████████████ -->
+
+<style>
+    .popup_boxes_btn {
+        display: flex;
+        width: 280px;
+        height: 60px;
+        margin: auto;
+        align-items: center;
+        cursor: pointer;
+        background-color: rgb(210, 210, 210);
+        margin-top: 15px;
+        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.70);
+    }
+    .popup_boxes_btn:hover {
+        box-shadow: 0px 0px 5px rgba(80, 80, 80, 0.700);
+    }
+
+    .popup_boxes_btn p {
+        margin: auto;
+    }
+
+    #unexecutable {
+        width: 48%;
+        margin: auto;
+    }
+
+    .ticker_holder {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+    }
+
+    .prop_holder {
+        width: 100%;
+        height: 30%;
+        align-items: center;
+    }
+
+    .prop_holder p {
+        margin: auto;
+        margin-left: 4px;
+    }
+
+    #sell_price {
+        font-size: 24px;
+        margin: auto;
+    }
+
+    #buy_price {
+        font-size: 24px;
+        margin: auto;
+    }
+</style>
