@@ -5,56 +5,25 @@
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
 
-//         Asynchronous vs synchnronous 
+//      JavaScript Promises : 
+//          * "Producing code" is code that can take some time
+//          * "Consuming code" is code that must wait for the result
+//          * A Promise is a JavaScript object that links producing code and consuming code
 
-//         Async Code : 
-//             1 - Callback
-//             2 - Promise 
-//             3 - Async/Await 
+//      A JavaScript Promise object can be:
+//      1 - Pending
+//      2 - Fulfilled
+//      3 - Rejected
 
-//         Callback Function : 
-//              * - A callback is a function passed as an argument to another function
-//              * - This technique allows a function to call another function
-//              * - A callback function can run after another function has finished
+//      The Promise object supports two properties: state and result.
+//      While a Promise object is "pending" (working), the result is undefined.
+//      When a Promise object is "fulfilled", the result is a value.
+//      When a Promise object is "rejected", the result is an error object.
 
-
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-
-// //         * Normal function runs sync : 
-
-// //         Normal Sync function 1
-// function myFirst() {
-//     console.log("Function ID : " + 1)
-// }
-
-// function mySecond() {
-//     myDisplayer("Function ID : " + 2);
-// }
-
-// myFirst();
-// mySecond();
-
-// // █▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒
-// // █▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒
-
-// //         Normal Sync function 2 
-
-// function myFirst() {
-//     console.log("Function ID : " + 1)
-// }
-
-// function mySecond() {
-//     console.log("Function ID : " + 2);
-// }
-
-// mySecond();
-// myFirst();
-
+//      JavaScript Promise Examples
+//          To demonstrate the use of promises, we will use the callback examples from the previous chapter:
+//              * Waiting for a Timeout
+//              * Waiting for a File
 
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
@@ -63,35 +32,19 @@
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
 
-// //         For more controll we can save function result and use it later : 
+//      Structure :                                              *** Dont Uncomment ***
+// let myPromise = new Promise(function (myResolve, myReject) {
+//     // "Producing Code" (May take some time)
 
-// var finalResult
+//     myResolve(); // when successful
+//     myReject();  // when error
+// });
 
-// function myFunc_1() {
-//     finalResult += "| Section_1 |"
-// }
-
-// function myFunc_2() {
-//     finalResult += "| Section_2 |"
-// }
-
-// function myFunc_3() {
-//     finalResult += "| Section_3 |"
-// }
-
-// function showResult(result) {
-//     console.log(result)
-// }
-
-// // █▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒
-// // █▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒
-
-// //         * Normal Invokin : 
-// myFunc_1()
-// myFunc_2()
-// myFunc_3()
-
-// showResult(finalResult)
+// // "Consuming Code" (Must wait for a fulfilled Promise)
+// myPromise.then(
+//     function (value) { /* code if successful */ },
+//     function (error) { /* code if some error */ }
+// );
 
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
@@ -100,175 +53,160 @@
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
 
-// //       * another way to define function to contrl sequence : 
+// //      Promiss Normal Use : 
 
-// var finalResult = ""
+// var myValue = 1;
 
-// function myFunc_1() {
-//     finalResult += "| Section_1 |"
-// }
-
-// function myFunc_2() {
-//     finalResult += "| Section_2 |"
-// }
-
-// function myFunc_3() {
-//     finalResult += "| Section_3 |"
-// }
-
-// function showResult() {
-
-//     myFunc_1()
-//     myFunc_2()
-//     myFunc_3()
-//     console.log(finalResult)
-// }
-
-// showResult()
-
-// █▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒
-// █▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒
-
-// // or another way :
-
-
-// var finalResult = ""
-
-// function myFunc_1() {
-//     finalResult += "| Section_1 |"
-//     myFunc_2()
-// }
-
-// function myFunc_2() {
-//     finalResult += "| Section_2 |"
-//     myFunc_3()
-
-// }
-
-// function myFunc_3() {
-//     finalResult += "| Section_3 |"
-//     showResult()
-// }
-
-// function showResult() {
-//     console.log(finalResult)
-// }
-
-// myFunc_1()
-
-
-
-
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-
-//      Use callback 
-//          * A callback is a function passed as an argument to another function.
-
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-
-// //      Use callback function :
-
-// function myFunc_1(cb) {
-//   let val = "";
-//   val += "| Section_1 |";
-
-//   myFunc_2(val , cb)
-// }
-
-// function myFunc_2(val , cb) {
-//     val += "| Section_2 |";
-//     myFunc_3(val , cb)
-// }
-
-// function myFunc_3(val ,cb) {
-
-//     val += "| Section_3 |";
-//     cb(val)
-// }
-
-// function showResult(cb_val) {
-//     console.log(cb_val)
-// }
-
-
-// myFunc_1(showResult)
-
-
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-
-// //      Example of using Async function : 
-
-// //      server response : 
-// var serverResponse
-
-// //      Wrong way : 
-// (setTimeout(() => {
-//     serverResponse = {
-//         fName: "X",
-//         lName: "Y",
-//     }
-
-// }, 5000))
-
-
-// console.log("Data : " + serverResponse)
-
-// █▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒
-// █▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒
-
-// var serverResponse
-
-// //      another wrong way : 
-// function sendReqServer() {
-//     serverResponse = {
-//         fName: "X",
-//         lName: "Y",
-//     }
-// }
-
-// function logData() {
-//     console.log(serverResponse)
-// }
-
-// setTimeout(sendReqServer, 5000)
-// logData()
-
-// setInterval(logData , 1000)
-
-
-// █▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒
-// █▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒
-
-// //      Right use :
-
-// var serverResponse
-
-// //      server response : 
-// function sendReqServer(cb) {
+// //      The producing code (this may take some time)
+// var myPromise = new Promise( (Resolve, Reject) => {
 //     setTimeout(() => {
-//         serverResponse = {
-//             fName: "X",
-//             lName: "Y",
+//         if (myValue != 0) {
+//             Resolve("Number has been changed !")
+//         } else {
+//             Reject("Cant change value !")
 //         }
-//         cb(serverResponse)
 //     }, 5000)
+// })
+
+// //      Connect both the producing code and the consuming code
+// myPromise.then(
+//     function (value) {
+//         console.log(value)
+//     },
+//     function (err) {
+//         console.log(err)
+//     }
+// )
+
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+
+// //      define function to control sequence and function invoking time :
+
+//     //  request_1
+// const promiseFunction_1 = () => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('resolved');
+//         }, 2000);
+//     });
+// };
+
+//     //  Request_2
+// const promiseFunction_2 = () => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('resolved');
+//         }, 4000);
+//     });
+// };
+
+//     //  Request_3
+// const promiseFunction_3 = () => {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve('resolved');
+//         }, 6000);
+//     });
+// };
+
+//     //  Create promises with Request functions : 
+// const promise1 = promiseFunction_1();
+// const promise2 = promiseFunction_2();
+// const promise3 = promiseFunction_3();
+
+//     //  Invoke promise functions in sequence : 
+// Promise.all([promise1, promise2, promise3])
+//     .then((result) => {
+//         console.log(result[0]);
+//         console.log(result[1]);
+//         console.log(result[2]);
+//     })
+
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+
+//      Async --- Await : 
+//              async and await make promises easier to write
+//              async makes a function return a Promise
+//              await makes a function wait for a Promise
+//      Await Syntax
+//              The await keyword can only be used inside an async function.
+//              The await keyword makes the function pause the execution and wait for a resolved promise before it continues:
+
+
+//      Structure : 
+
+// async function myFunc () {
+//     return myValue ; 
+// }
+// myFunc.then(
+//     function(myValue) {},
+//     function(err) {}
+// )
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+// ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
+
+// //       Compare to Promise:
+
+// var response = {};
+
+// //       The producing code (this may take some time)
+// async function requestServer() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       response.fName = "Ali";
+//       response.lName = "Mohammadi";
+//       response.age = 15;
+//       response.stat = false;
+
+//       resolve(response);
+//     }, 5000);
+//   });
 // }
 
-// function logData(data) {
-//     console.log(data)
+// //       Handel async(promise function :)
+// requestServer().then((res) => {  
+//   if (res.stat == true) {
+//     console.log(response);
+//   } else {
+//     console.error("No Connection to server !");
+//   }
+// });
+
+// █▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒
+// █▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒█▒▒▒▒▒▒▒▒▒
+
+// //      Another way to handel async (with await)
+
+// serverResponce = {}
+
+// async function showResponce() {
+//     var myRequest = new Promise(function (resolve, reject) {
+//         setTimeout(() => {
+//             serverResponce.stat = true;
+//             serverResponce.token = "8@@@!@#$$666456"
+
+//             resolve(serverResponce)
+//         }, 5000);
+//     });
+//     resData = await myRequest
+//     console.log(resData)
 // }
 
-// sendReqServer(logData)
+// showResponce()
 
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
@@ -276,4 +214,3 @@
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
 // ██████████████████████████████████████████████████████████████████████████████████████████████████████████████
-
