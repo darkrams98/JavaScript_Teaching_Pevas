@@ -1,0 +1,22 @@
+.send_btn {
+    width: 160px;
+    height: 45px;
+    background-color: rgb(20, 155, 255);
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 16px !important ;
+    border-radius: 2px ;
+    cursor: pointer;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.400);
+}
+.send_btn:hover {
+    background-color: rgb(20, 175, 255);
+
+}
+
+.p_btn {
+    margin: auto; /* Remove any default margin */
+    text-align: center;
+}
+

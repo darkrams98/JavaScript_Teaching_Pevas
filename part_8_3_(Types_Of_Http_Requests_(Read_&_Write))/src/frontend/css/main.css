@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'vazir_1';
+  src: url('/fonts/persian/Vazir-Medium.ttf') format('ttf');
+  /* دیگر تنظیمات فونت مانند وزن و نمایش را تعیین کنید */
+}
+
+@font-face {
+  font-family: 'vazir_2';
+  src: url('/fonts/persian/Vazir-Medium.woff') format('woff');
+  /* دیگر تنظیمات فونت مانند وزن و نمایش را تعیین کنید */
+}
+
+@font-face {
+  font-family: 'vazir_3';
+  src: url('/fonts/persian/Vazir-Medium.woff2') format('woff2');
+  /* دیگر تنظیمات فونت مانند وزن و نمایش را تعیین کنید */ 
+}
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'vazir_1', "vazir_2" , "vazir_3" 
+
+
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'vazir_1', "vazir_2" , "vazir_3" ;
+    font-size: 14px ;
+
+}

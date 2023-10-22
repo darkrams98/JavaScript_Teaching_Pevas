@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async VS Sync</title>
+
+
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/user_info_style.css">
+    <link rel="stylesheet" href="/styles/user_dashbord_leftside.css">
+    <link rel="stylesheet" href="/styles/Button.css">
+    <link rel="stylesheet" href="/styles/responsive/responsive_main.css">
+    <link rel="stylesheet" href="/styles/responsive/responsive_user_info.css">
+
+
+</head>
+
+<body>
+    <div class="user_container">
+        <div class="user_info_container">
+            <div class="user_image_section">
+                <div class="user_image_container">
+                    <img class="user_img" src="https://s6.uupload.ir/files/default_profile_iphu.png" alt="">
+                </div>
+            </div>
+            <div class="user_info">
+                <div class="info_alignment">
+                    <p>نام : </p>
+                    <p></p>
+                </div>
+                <div class="info_alignment">
+                    <p>نام خانوادگی : </p>
+                    <p></p>
+                </div>
+                <div class="info_alignment">
+                    <p>ایمیل : </p>
+                    <p></p>
+                </div>
+                <div class="info_alignment">
+                    <p>شماره تماس : </p>
+                    <p></p>
+                </div>
+                <div class="about_me">
+                    <p>درباره من :‌ </p>
+                    <p class="about_text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="user_course_content">
+            <div class="input_container">
+                <p style="width: 100%;">درخواست خود را ارسال کنید : </p>
+                <textarea class="reqText" name="request" id="request"></textarea>
+                <div class="send_btn">
+                    <p class="p_btn">ارسال</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Import -->
+    <script type="module">
+        import { userDataInitializer } from './components/user_card.js'; // Adjust the path as needed
+        import { sendData } from './js/send_data_controller.js'
+        userDataInitializer.userCardInit()
+
+        // Add an event listener in your JavaScript file
+        document.querySelector('.send_btn').addEventListener('click', sendTiket);
+
+        function sendTiket() {
+            // Get the content of the textarea
+            const requestText = document.getElementById('request').value;
+            // Call the function to send the data to the server
+            sendData.sendNewTiket(requestText);
+        }
+    </script>
+</body>
+
+
+
+</html>

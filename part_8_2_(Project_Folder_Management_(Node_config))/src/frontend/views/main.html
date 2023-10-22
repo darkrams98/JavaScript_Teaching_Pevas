@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async VS Sync</title>
+    <link rel="stylesheet" href="/styles/post_card.css">
+
+</head>
+
+<body>
+    <div class="post_titel_container">
+        <p>آخرین پست ها</p>
+    </div>
+    <div class="post_list_container">
+        <div class="card_container">
+
+
+
+        </div>
+
+
+        <!-- Import the postController from slide_show.js -->
+        <script type="module">
+            import { postController } from '/modules/slide_show.js';
+
+            // Fetch post data
+            fetch('/showdata')
+                .then(res => res.json())
+                .then(data => {
+                    console.log(typeof (data))
+                    postShow(data);
+                })
+
+            function postShow(posts) {
+                if (posts) {
+
+                    //      Use with call
+                    for (let i = 0; i <= posts.length; i++) {
+                        console.log(posts)
+                        postController.renderPost.call(postController, posts[i])
+                    }
+
+                    // //      use with apply 
+                    // for (var i = 0; i < posts.length; i++) {
+                    //     postController.renderPost.apply(postController, [responseData[i]]);
+                    // }
+
+                    // //      use bind : 
+                    // for (var i = 0; i < posts.length; i++) {
+                    //     var renderPostWithArgs = postController.renderPost.bind(postController, responseData[i]);
+                    //     renderPostWithArgs();
+                    // }
+
+                } else {
+                    console.error('Invalid data format:', posts);
+                }
+            }
+        </script>
+</body>
+
+
+
+</html>

@@ -1,0 +1,41 @@
+@media screen and (max-width: 900px) {
+    .user_container {
+        flex-direction: column;
+        padding-bottom: 20px ;
+        width: 100% ;
+    }
+    .user_info_container {
+        width: 100%;
+        border: none;
+        border-bottom: 1px rgba(0, 0, 0, 0.500) solid;
+    }
+
+    .user_course_content {
+        width: 100%;
+    }
+    .info_alignment {
+        display: flex;
+        flex-direction: row;
+    
+        width: 100%;
+    } p:first-child {
+        width: 30%;
+        white-space: nowrap;
+
+    
+    } p:last-child {
+        width: 70%;
+    };
+}
+@media screen and (max-width: 350px) {
+
+    .info_alignment {
+        width: 100%;
+
+    } p:first-child {
+
+
+    
+    } p:last-child {
+    };
+}

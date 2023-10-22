@@ -1,0 +1,39 @@
+[
+  {
+    "postTitle": "آموزش هوش مصنوعی",
+    "fullName": "محمد حسنی",
+    "courseLevel": "مستر",
+    "degree": "دارد",
+    "courseTags": [
+      "علوم داده",
+      "آموزشی"
+    ]
+  },
+  {
+    "postTitle": "دوره صفر تا صد C++",
+    "fullName": "علیرضا مقدسی",
+    "courseLevel": "جنیور",
+    "degree": "دارد",
+    "courseTags": [
+      "برنامه نویسی"
+    ]
+  },
+  {
+    "postTitle": " دوره flexbox ",
+    "fullName": "محمد حسنی",
+    "courseLevel": "مستر",
+    "degree": "دارد",
+    "courseTags": [
+      "CSS"
+    ]
+  },
+  {
+    "postTitle": " دوره ورد پرس ",
+    "fullName": " سامان طاهری",
+    "courseLevel": "جنیور",
+    "degree": "ندارد",
+    "courseTags": [
+      "سایت نویسی"
+    ]
+  }
+]
